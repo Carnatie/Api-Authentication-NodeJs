@@ -9,7 +9,7 @@ router
     .get('/users', UserController.seeAllUsers)
     .get('/users/:id', UserController.seeOneUser)
     // Update
-    .post('/users/:id', UserController.updateUser)
+    .put('/users/:id', UserController.updateUser)
     // Delete
     .delete('/users/:id', UserController.deleteUser)
 
