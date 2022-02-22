@@ -41,7 +41,8 @@ class UserController {
             await database.Users.update(newInfo, {
                 where: {
                     id: Number(id)
-                }
+                },
+                individualHooks: true
             })
             const updatedUser = await database.Users.findOne({
                 where: {
