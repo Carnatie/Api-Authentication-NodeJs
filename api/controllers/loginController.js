@@ -20,7 +20,7 @@ class LoginController {
             expiresIn: '2 days'
         })
 
-        return res.json({
+        return res.status(200).json({
             auth: true,
             token: token
         })
