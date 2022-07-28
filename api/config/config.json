@@ -1,17 +1,14 @@
 {
   "development": {
     "username": "root",
-    "password": "27Kaio05.03",
+    "password": "root",
     "database": "api_auth",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "sqlite",
+    "storage": "./__tests__/dbTests.sqlite"
   },
   "production": {
     "username": "root",

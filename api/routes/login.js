@@ -2,7 +2,7 @@ const {
     Router
 } = require('express')
 const passport = require('passport')
-require('../auth/passport')
+require('../services/passport')
 
 const LoginController = require('../controllers/loginController')
 
