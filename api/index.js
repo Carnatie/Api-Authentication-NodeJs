@@ -8,7 +8,7 @@ const routes = require('./routes/index')
 const passport = require('passport')
 
 const app = express()
-const port = 3000
+const port = 3300
 
 require('./services/passport')
 require('./routes/index')
@@ -24,6 +24,8 @@ app.use(passport.initialize())
 app.use(passport.session())
 
 routes(app)
-app.listen(port, () => console.log(`App listening on port ${port}!`))
+if (process.env.NODE_ENV !== 'test') {
+    app.listen(port, () => console.log(`Listening on port ${port}`))
+}
 
 module.exports = app
