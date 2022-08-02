@@ -10,7 +10,6 @@ const passport = require('passport')
 const app = express()
 const port = 3000
 
-require('./services/mailerService.js')
 require('./services/passport')
 require('./routes/index')
 
