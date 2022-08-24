@@ -57,7 +57,7 @@ describe('Authenticantion', () => {
                 email: user.email,
                 password: "12345678"
             })
-        request(app)
+        await request(app)
             .get('/users')
             .set('Authorization', `Bearer ${response.body.token}`)
 
