@@ -1,3 +1,4 @@
+const faker = require('faker')
 const request = require('supertest')
 
 const app = require('../../api')
@@ -22,6 +23,33 @@ describe('Authenticantion', () => {
             })
 
         expect(response.status).toBe(200)
+    })
+
+    it("should authenticate with invalid email", async () => {
+
+        const response = await request(app)
+            .post("/login")
+            .send({
+                email: faker.internet.email(),
+                password: "12345678"
+            })
+
+        expect(response.status).toBe(401)
+    })
+
+    it("should authenticate with invalid password", async () => {
+        const user = await factory.create('User', {
+            password: '12345678'
+        })
+
+        const response = await request(app)
+            .post("/login")
+            .send({
+                email: user.email,
+                password: "1241532"
+            })
+
+        expect(response.status).toBe(401)
     })
 
     it("should return jwt token when authenticated", async () => {
