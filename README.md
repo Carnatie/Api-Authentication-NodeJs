@@ -22,6 +22,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - ``Jest``
 - ``MySQL``
 - ``SQLite``
+- ``Docker``
 
 ---
 
